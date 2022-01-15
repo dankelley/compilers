@@ -4,11 +4,21 @@ title: Modern C optimizers are clever
 date: 2022-01-15
 ---
 
-**Abstract.** Two screen snapshots show how C precomputes the results of
-constant loops.
+**Abstract.** Two screen snapshots (from https://godbolt.org) demonstrate C
+optimization of constant loops.
 
+```{r eval=FALSE}
+int squarePlus(int num, int a)
+{
+    int add=3;
+    for (int i=0; i < 10; i++)
+        add = add + a;
+    return num*num + add;
+}
+```
 
-![Unoptimized case.  Left: C code.  Right: assembly code.](001_no_optimization.png)
+![Optimized case.  Left: C code.  Right: assembly code.](optimized.png)
 
-![Optimized case.  Left: C code.  Right: assembly code. Note that the assembly code has precomputed the result of the loop.](001_optimization.png)
+![Unoptimized case.  Left: C code.  Right: assembly code.](unoptimized.png)
+
 
