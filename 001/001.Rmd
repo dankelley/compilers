@@ -1,0 +1,14 @@
+---
+author: Dan Kelley
+title: Modern C optimizers are clever
+date: 2022-01-15
+---
+
+**Abstract.** Two screen snapshots show how C precomputes the results of
+constant loops.
+
+
+![Unoptimized case.  Left: C code.  Right: assembly code.](001_no_optimization.png)
+
+![Optimized case.  Left: C code.  Right: assembly code. Note that the assembly code has precomputed the result of the loop.](001_optimization.png)
+
